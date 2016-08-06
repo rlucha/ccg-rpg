@@ -8,6 +8,16 @@
 (defn next-turn []
   [:button {:on-click #(re-frame/dispatch [:next-turn])} "Next turn"])
 
+(defn find-card []
+  [:button {:on-click #(re-frame/dispatch [:find-card])} "Find card"])
+
+
+(defn cards []
+  (let [cards (re-frame/subscribe [:cards])]
+    (fn []
+      [:div @cards])))
+
+
 (defn main-panel []
   (let [name (re-frame/subscribe [:name])
         turn (re-frame/subscribe [:turn])]
@@ -16,4 +26,7 @@
         [:div @name " " (current-user)]
         [:div "Current turn " @turn]
         [:br]
-        [:div (next-turn)]])))
+        [:div (next-turn)]
+        [:div (find-card)]
+        [:br]
+        [:div "Cards" (cards)]])))

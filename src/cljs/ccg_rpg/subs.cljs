@@ -16,4 +16,8 @@
   :turn
   (fn [db]
     (reaction (:turn @db))))
- 
+
+(re-frame/register-sub
+  :cards
+  (fn [db])
+  (reaction (:cards @db)))
