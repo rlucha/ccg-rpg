@@ -22,8 +22,8 @@
 
 (defn find-card
   [app-state []]
-  (println app-state)
-  (assoc-in app-state [:cards] (create-card)))
+  (assoc-in app-state [:cards] (conj (app-state :cards) (create-card))))
+
 
 (re-frame/register-handler
   :next-turn

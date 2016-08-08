@@ -4,4 +4,7 @@
   { :name "CCG-RPG"
     :user "rlucha"
     :turn 0
-    :cards {}})
+    :cards [
+            {:name "initial"
+             :dmg 1
+             :type :neutral}]})

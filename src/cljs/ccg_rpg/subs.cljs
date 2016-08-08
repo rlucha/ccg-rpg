@@ -19,5 +19,5 @@
 
 (re-frame/register-sub
   :cards
-  (fn [db])
-  (reaction (:cards @db)))
+  (fn [db, [_ _]]
+    (reaction (get-in @db [:cards]))))
