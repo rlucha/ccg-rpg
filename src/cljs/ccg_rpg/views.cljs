@@ -12,13 +12,14 @@
   [:button {:on-click #(re-frame/dispatch [:find-card])} "Find card"])
 
 (defn card [c]
+  ^{ :key (c :name)}
   [:li  [:b "Name: "] (c :name) " "
         [:b "DMG: "]  (c :dmg) " "
         [:b "Type: "] (c :type)]) " "
 
 (defn cards []
   (let [cards (re-frame/subscribe [:cards])]
-    [:div (map card @cards)]))
+    [:ul (map card @cards)]))
 
 (defn main-panel []
   (let [name (re-frame/subscribe [:name])
