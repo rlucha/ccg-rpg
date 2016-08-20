@@ -3,7 +3,8 @@
                  [org.clojure/clojurescript "1.8.51"]
                  [reagent "0.5.1"]
                  [binaryage/devtools "0.6.1"]
-                 [re-frame "0.7.0"]]
+                 [re-frame "0.7.0"]
+                 [org.clojure/core.async "0.2.385"]]
 
   :plugins [[lein-cljsbuild "1.1.3"]]
 
@@ -19,8 +20,8 @@
   {:dev
    {:dependencies []
 
-    :plugins      [[lein-figwheel "0.5.4-3"]]
-    }}
+    :plugins      [[lein-figwheel "0.5.4-3"]]}}
+
 
   :cljsbuild
   {:builds
@@ -39,8 +40,4 @@
                     :output-to       "resources/public/js/compiled/app.js"
                     :optimizations   :advanced
                     :closure-defines {goog.DEBUG false}
-                    :pretty-print    false}}
-
-    ]}
-
-  )
+                    :pretty-print    false}}]})

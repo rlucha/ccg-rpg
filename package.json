@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "lein cljsbuild auto"
+    "dev": "lein cljsbuild auto",
+    "repl": "lein trampoline cljsbuild repl-listen",
+    "start": "browser-sync start --server \"resources/public\" --files=\"**/*\""
   },
   "author": "",
   "license": "ISC"

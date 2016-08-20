@@ -5,7 +5,9 @@
               [ccg-rpg.handlers]
               [ccg-rpg.subs]
               [ccg-rpg.views :as views]
-              [ccg-rpg.config :as config]))
+              [ccg-rpg.config :as config]
+              [clojure.browser.repl :as repl]))
+
 
 
 (defn dev-setup []
@@ -20,4 +22,5 @@
 (defn ^:export init []
   (re-frame/dispatch-sync [:initialize-db])
   (dev-setup)
-  (mount-root))
+  (mount-root)
+  (repl/connect "http://localhost:9000/repl"))
